@@ -1,0 +1,22 @@
+Create database onlinevotingsystem
+Use onlinevotingsystem
+CREATE TABLE Candidates (
+  CandidateId INT IDENTITY(1,1) PRIMARY KEY,
+  Name VARCHAR(100) NOT NULL,
+  Post VARCHAR(100) NOT NULL,
+  Party VARCHAR(100) NOT NULL,
+  Votes INT DEFAULT 0
+)
+CREATE TABLE Voters (
+  VoterId INT PRIMARY KEY,
+  Name VARCHAR(100) NOT NULL,
+  CNIC VARCHAR(15) NOT NULL,
+  Gender VARCHAR(10) NOT NULL,
+  Address VARCHAR(255) NOT NULL,
+  HasVoted BIT DEFAULT 0
+)
+INSERT INTO Candidates (Name, Post, Party)
+VALUES ('Imran Khan', 'President', 'PTI'),
+       ('Asif Ali Zardari', 'Vice President', 'PPP'),
+       ('Pervaiz Elahi', 'President', 'PTI'),
+       ('Bilaval jani', 'Vice President', 'PPP');
